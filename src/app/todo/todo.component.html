@@ -1,10 +1,11 @@
 <div class="listContainer">
   <div class="taskContainer">
-    <button *ngIf="listItem?.completed === false">Complete</button>
+    <button class="complete" *ngIf="listItem?.completed === false">
+      Complete
+    </button>
     <p [ngClass]="{ strikethrough: listItem?.completed }">
       {{ listItem?.task }}
     </p>
-    <p>{{ listItem?.completed }}</p>
   </div>
   <button><i class="fas fa-times"></i></button>
 </div>

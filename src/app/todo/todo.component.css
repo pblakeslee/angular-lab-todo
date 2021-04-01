@@ -1,16 +1,33 @@
 .listContainer {
   display: flex;
-  width: 400px;
+  width: 100%;
   align-items: center;
   justify-content: space-between;
+  margin: 7px 0;
 }
 
 .taskContainer {
   display: flex;
-  width: 250px;
-  justify-content: space-between;
 }
 
 .strikethrough {
   text-decoration: line-through;
+}
+
+.complete {
+  background-color: transparent;
+  border: 1px solid #ff69b4;
+  border-radius: 5px;
+  padding: 0px 3px;
+  margin-right: 5px;
+  color: #ff69b4;
+  font-family: "Open Sans", sans-serif;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+}
+i {
+  color: #bbb;
 }
