@@ -1,6 +1,6 @@
 <div class="listContainer">
   <div class="taskContainer">
-    <button>Complete</button>
+    <button *ngIf="listItem?.completed === false">Complete</button>
     <p [ngClass]="{ strikethrough: listItem?.completed }">
       {{ listItem?.task }}
     </p>

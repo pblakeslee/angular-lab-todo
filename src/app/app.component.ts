@@ -14,7 +14,7 @@ export class AppComponent {
     },
     {
       task: 'put clothes in dresser',
-      completed: false,
+      completed: true,
     },
     {
       task: 'relax',
