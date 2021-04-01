@@ -8,6 +8,7 @@ import { Todo } from '../todo';
 })
 export class TodoComponent implements OnInit {
   @Input() listItem: Todo | null = null;
+  @Input() i: any;
   constructor() {}
 
   ngOnInit(): void {}

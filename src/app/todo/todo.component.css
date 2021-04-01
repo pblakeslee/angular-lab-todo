@@ -24,6 +24,10 @@
   font-family: "Open Sans", sans-serif;
 }
 
+.numberedIndex {
+  margin-right: 5px;
+}
+
 button {
   background-color: transparent;
   border: none;
