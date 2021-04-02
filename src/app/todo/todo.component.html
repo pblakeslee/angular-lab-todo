@@ -2,7 +2,7 @@
   <div class="taskContainer">
     <p class="numberedIndex">{{ i + 1 }}</p>
     <button
-      (click)="markComplete()"
+      (click)="completeTask()"
       class="complete"
       *ngIf="listItem?.completed === false"
     >

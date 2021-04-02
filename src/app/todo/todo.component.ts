@@ -27,7 +27,7 @@ export class TodoComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  markComplete() {
+  completeTask() {
     this.listItem !== null ? (this.listItem.completed = true) : '';
     // this.listItem?.completed = true;
   }
