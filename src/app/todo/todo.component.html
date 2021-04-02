@@ -1,12 +1,18 @@
 <div class="listContainer">
   <div class="taskContainer">
     <p class="numberedIndex">{{ i + 1 }}</p>
-    <button class="complete" *ngIf="listItem?.completed === false">
+    <button
+      (click)="markComplete()"
+      class="complete"
+      *ngIf="listItem?.completed === false"
+    >
       Complete
     </button>
     <p [ngClass]="{ strikethrough: listItem?.completed }">
       {{ listItem?.task }}
     </p>
   </div>
-  <button><i class="fas fa-times"></i></button>
+  <button (click)="remove()"><i class="fas fa-times"></i></button>
 </div>
+
+<!-- (click)="delete()" -->

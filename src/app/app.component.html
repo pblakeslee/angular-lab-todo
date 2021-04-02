@@ -1,11 +1,12 @@
 <h1>TODO List</h1>
 <p>A place to store your todos</p>
-<input type="text" placeholder="Filter your to-dos" />
+<input [(ngModel)]="searchText" type="text" placeholder="Filter your to-dos" />
 
 <app-todo
-  *ngFor="let listItem of listItems; let i = index"
+  *ngFor="let listItem of listItems | filter: searchText; let i = index"
   [listItem]="listItem"
   [i]="i"
+  (removed)="removeTask($event)"
 ></app-todo>
 
 <input type="text" placeholder="Add your to-do" />

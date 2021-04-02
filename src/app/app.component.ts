@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Todo } from 'src/app/todo';
+import { TodoComponent } from './todo/todo.component';
 
 @Component({
   selector: 'app-root',
@@ -34,5 +35,15 @@ export class AppComponent {
     },
   ];
 
+  searchText: string | null = null;
+
+  removeTask(event: any) {
+    this.listItems?.splice(this.listItems?.indexOf(event), 1);
+  }
+
   title = 'to-do-list';
+
+  // onRemove(event: any) {
+  //   console.log('test');
+  // }
 }
