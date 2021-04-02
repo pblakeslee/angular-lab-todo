@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Todo } from 'src/app/todo';
-import { TodoComponent } from './todo/todo.component';
 
 @Component({
   selector: 'app-root',
@@ -15,7 +14,7 @@ export class AppComponent {
     },
     {
       task: 'put clothes in dresser',
-      completed: true,
+      completed: false,
     },
     {
       task: 'relax',
@@ -23,7 +22,7 @@ export class AppComponent {
     },
     {
       task: 'try to pet cat',
-      completed: true,
+      completed: false,
     },
     {
       task: 'pet dog',
@@ -39,6 +38,15 @@ export class AppComponent {
 
   removeTask(event: any) {
     this.listItems?.splice(this.listItems?.indexOf(event), 1);
+  }
+
+  newTask: any;
+  addTask() {
+    this.listItems?.push({
+      task: this.newTask,
+      completed: false,
+    });
+    this.newTask = '';
   }
 
   title = 'to-do-list';

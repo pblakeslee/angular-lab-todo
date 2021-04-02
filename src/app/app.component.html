@@ -9,5 +9,5 @@
   (removed)="removeTask($event)"
 ></app-todo>
 
-<input type="text" placeholder="Add your to-do" />
-<button>Add</button>
+<input [(ngModel)]="newTask" type="text" placeholder="Add your to-do" />
+<button (click)="addTask()">Add</button>
