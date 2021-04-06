@@ -1,4 +1,6 @@
+import { analyzeAndValidateNgModules } from '@angular/compiler';
 import { Component } from '@angular/core';
+import { DataService } from 'src/app/data.service';
 import { Todo } from 'src/app/todo';
 
 @Component({
@@ -7,51 +9,20 @@ import { Todo } from 'src/app/todo';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  listItems: Todo[] = [
-    {
-      task: 'fold clothes',
-      completed: false,
-    },
-    {
-      task: 'put clothes in dresser',
-      completed: false,
-    },
-    {
-      task: 'relax',
-      completed: false,
-    },
-    {
-      task: 'try to pet cat',
-      completed: false,
-    },
-    {
-      task: 'pet dog',
-      completed: false,
-    },
-    {
-      task: 'be awesome',
-      completed: false,
-    },
-  ];
-
   searchText: string | null = null;
-
-  removeTask(event: any) {
-    this.listItems?.splice(this.listItems?.indexOf(event), 1);
-  }
-
-  newTask: any;
-  addTask() {
-    this.listItems?.push({
-      task: this.newTask,
-      completed: false,
-    });
-    this.newTask = '';
-  }
-
   title = 'to-do-list';
+  newTask: any;
+  listItems: Todo[] = [];
 
-  // onRemove(event: any) {
-  //   console.log('test');
-  // }
+  constructor(private data: DataService) {}
+
+  ngOnInit(): void {
+    this.listItems = this.data.getTodos();
+  }
+  addTask(newTask: string) {
+    this.data.addTask(newTask);
+  }
+  removeTask(todo: Todo) {
+    this.data.removeTask(todo);
+  }
 }
